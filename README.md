@@ -1,4 +1,4 @@
-# Angular libraries repoasitory
+# Angular libraries repository
 Provides common angular items for the Proud distribution.
 
 Read more:
