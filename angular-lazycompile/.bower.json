@@ -1,0 +1,33 @@
+{
+  "name": "angular-lazycompile",
+  "homepage": "https://github.com/aschmoe/angular-lazycompile",
+  "authors": [
+    "Alex Schmoe <aschmoe@gmail.com>"
+  ],
+  "description": "Angular lazy-compiling directive",
+  "main": "./src/angular-lazycompile.js",
+  "moduleType": [],
+  "keywords": [
+    "angular",
+    "lazy",
+    "directive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "f7158d4d12",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f7158d4d125e7393e4dd8e824ddfdf38ff72e894"
+  },
+  "_source": "git@github.com:aschmoe/angular-lazycompile.git",
+  "_target": "master",
+  "_originalSource": "git@github.com:aschmoe/angular-lazycompile"
+}
