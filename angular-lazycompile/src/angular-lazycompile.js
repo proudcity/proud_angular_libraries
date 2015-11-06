@@ -9,6 +9,7 @@ angular.module('angular-lazycompile', [
       lazyCompile: '=',
       lazyDecode: '='
     },
+    replace: true,
     link: function postLink(scope, element, attrs) {
       var voidCompile = scope.$watch('lazyCompile', function(value) {
         if(value && value != "false") {
@@ -16,11 +17,20 @@ angular.module('angular-lazycompile', [
             value = decodeURIComponent(value);
           }
           // when the 'compile' expression changes
-          // assign it into the current DOM
-          element.html(value);
+          var lazyContent = angular.element(value);
+          // Add after our element
+          element.after(lazyContent);
 
-          // compile the new DOM and link it to the current
-          $compile(element.contents())(scope);
+          // compile the new DOM
+          $compile(lazyContent)(scope.$parent);
+
+          setTimeout(function() {
+            scope.$destroy();
+            scope = null;
+
+            element.remove();
+            element = null;
+          }, 0);
 
           // Use un-watch feature to ensure compilation happens only once.
           voidCompile();
